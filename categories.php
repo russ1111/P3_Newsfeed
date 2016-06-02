@@ -36,7 +36,17 @@ if(mysqli_num_rows($result) > 0)
 	while($row = mysqli_fetch_assoc($result))
 	{# process each row
         
-            echo '<div align="center"><a href="' . VIRTUAL_PATH . 'demo/science_news.php?id=' . (int)$row['CategoryID'] . '">' . dbOut($row['Category']) . '</a></div>'; 
+	     	 if($row['CategoryID'] == 1){
+	+            echo '<div align="center"><a href="' . VIRTUAL_PATH . 'demo/science_news.php?id=' . (int)$row['CategoryID'] . '">' . dbOut($row['Category']) . '</a></div>'; 
+	+        }
+	+        
+	+        elseif($row['CategoryID'] == 2){
+	+            echo '<div align="center"><a href="' . VIRTUAL_PATH . 'demo/world_news.php?id=' . (int)$row['CategoryID'] . '">' . dbOut($row['Category']) . '</a></div>'; 
+	+        }
+	+        
+	+        else{
+	+            echo '<div align="center"><a href="' . VIRTUAL_PATH . 'demo/health_news.php?id=' . (int)$row['CategoryID'] . '">' . dbOut($row['Category']) . '</a></div>'; 
+	+        }
         
 	} 
     
