@@ -3,7 +3,7 @@
 
 drop table if exists Categories;
 create table Categories (
-        CategoryID int unsigned not null auto_increment primary key,
+        CategoryID int signed not null auto_increment primary key,
         Category varchar (120),
         Description text
 );
@@ -26,10 +26,10 @@ insert into Categories values (NULL,'Medicine','medicine links');
 
 drop table if exists Feed;
 create table Feed (
-        LinkID int unsigned not null auto_increment primary key,
+        LinkID int signed not null auto_increment primary key,
         Description text,
         CategoryID int DEFAULT 0,
-        URL varchar (1000)
+        URL varchar (255)
 );
 
 
